@@ -5,7 +5,10 @@ vertex = init.vertex;
 edges = init.edges;
 dist = init.dist;
 
-# looping through a list of distance to find the correct distance
+## This file is for the main menu or main UI
+...
+
+## looping through a list of distance to find the correct distance
 def dist_loop(j, k):
     temp1 = (j+'_'+k)
     temp2 = (k+'_'+j)
