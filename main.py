@@ -1,74 +1,102 @@
-import networkx as nx
-import init
 import func4
-import func3
+import init
+from common_func import add
+from common_func import add_edge
+from common_func import remove_edges
+from func1 import is_strongly_connected
 
-vertex = init.vertex;
-edges = init.edges;
-dist = init.weight_dicts;
-graph = nx.DiGraph()
+vertex = init.vertex
+edges = init.edges
+dist = init.weight_dicts
 
-# looping through a list of distance to find the correct distance
-def dist_loop(j, k):
-    temp1 = (j+'_'+k)
-    temp2 = (k+'_'+j)
-    i = 0;
-    while i < 10:
-        if (temp1 == dist[i][0]):
-            result = dist[i][1];
-        if (temp2 == dist[i][0]):
-            result = dist[i][1];
-        i+=1;
-    return result
+## This file is for the main menu or main UI
+def main_menu():
+    print('-----------------------------------\n'
+        '|            Main Menu            |\n'
+        '-----------------------------------\n'
+        '|  1. Show Graph                  |\n'
+        '|  2. Add Edge                    |\n'
+        '|  3. Remove Edge                 |\n'
+        '|  4. Check Connectivity Graph    |\n'
+        '|  5. Check Cyclic Graph          |\n'
+        '|  6. Calculate Shortest Path     |\n'
+        '|  7. Show Minimum Spanning Tree  |\n'
+        '|  8. Reset                       |\n'
+        '|  9. Exit                        |\n'
+        '-----------------------------------\n')
 
-# Add edges function
-def add(a, b):
-    for x in vertex:
-        if(x == a):
-            a = x;
-        if(x == b):
-            b = x;
-            dist = dist_loop(a, b)
-            edges.append((a,b,dist))
-            break;
-
-# Remove edges function
-def remove_edges(a, b) :
-  if(init.graph.has_edge(a, b) == True) :
-    init.graph.remove_edge(a, b)
-    print('The edge has been removed')
-  else :
-    print('The edge to be removed does not exist')
-
-# user removing edges
-while True:
-    init.draw_graph()
-    print("Please input the starting vertex: ")
-    n = input()
-    print("Please input the destination vertex: ")
-    m = input()
-
-    remove_edges(n, m);
-    init.draw_graph()
-    print("Remove more? y/n")
-    q = input()
-    if(q == "n"):
-        break;
+def options(c):
+    while True:
+        if (c == 1):
+            init.draw_graph()
+        elif (c == 2):
+            add_edge()
+        elif (c == 3):
+            remove_edges('SO','VA')
+        elif (c == 4):
+            None
+            # func1
+        elif (c == 5):
+            None
+            # func2
+        elif (c == 6):
+            None
+            # func3
+        elif (c == 7):
+            None
+            # func4
+        elif (c == 8):
+            None
+            # reset
+        elif (c == 9):
+            # exit
+            break
 
 # user inputting new edges -----------
-while True:
-    init.draw_graph()
-    print("Please input the starting vertex: ")
-    n = input()
-    print("Please input the destination vertex: ")
-    m = input()
+def min_ST():
+    while True:
+        while True:
+            n = input("Please input the starting vertex: ")
+            i = 0
+            while i <= len(vertex):
+                temp = vertex[i]
+                if (temp == n):
+                    break
+                i += 1
+                if (i == 5 and temp != n):
+                    print("Unknown input, terminating...")
+                    quit()
+            break
 
-    add(n, m);
-    init.draw_graph()
-    func4.mstt()
-    print("Add more? y/n")
-    q = input()
-    if(q == "n"):
-        break;
+        while True:
+            m = input("Please input the destination vertex: ")
+            i = 0
+            while i <= len(vertex):
+                temp = vertex[i]
+                if (temp == m):
+                    break
+                i += 1
+                if (i == 5 and temp != m):
+                    print("Unknown input, terminating...")
+                    quit()
+            i = 0
+            break
+
+        add(n, m);
+        init.draw_graph()
+        func4.mstt()
+        print("Add more? y/n")
+        q = input()
+        if (q == "n"):
+            quit()
+        if (q == "y"):
+            continue
+        if (q != "n" and q != "y"):
+            print("Not a valid response, exiting...")
+            quit()
+            ...
 #---------------------------------------
 
+main_menu()
+#c = input()
+#options(c)

@@ -12,7 +12,7 @@ def dist_loop(j, k):
             result = dist[x]
     return result
 
-# Add edges function
+# Add function
 def add(a, b):
     for x in vertex:
         if(x == a):
@@ -22,3 +22,55 @@ def add(a, b):
             dist = dist_loop(a, b)
             edges.append((a,b,dist))
             break;
+# add edge function
+def add_edge():
+    while True:
+        n = input("Please input the starting vertex: ")
+        i = 0
+        while i <= len(vertex):
+            temp = vertex[i]
+            if (temp == n):
+                break
+            i += 1
+            if (i == 5 and temp != n):
+                print("Unknown input, terminating...")
+                quit()
+        break
+
+    while True:
+        m = input("Please input the destination vertex: ")
+        i = 0
+        while i <= len(vertex):
+            temp = vertex[i]
+            if (temp == m):
+                break
+            i += 1
+            if (i == 5 and temp != m):
+                print("Unknown input, terminating...")
+                quit()
+        i = 0
+        break
+    add(n,m)
+
+# Remove edges function
+def remove_edges(a, b) :
+  if(init.graph.has_edge(a, b) == True) :
+    init.graph.remove_edge(a, b)
+    print('The edge has been removed')
+  else :
+    print('The edge to be removed does not exist')
+
+# user removing edges
+while True:
+    init.draw_graph()
+    print("Please input the starting vertex: ")
+    n = input()
+    print("Please input the destination vertex: ")
+    m = input()
+
+    remove_edges(n, m);
+    init.draw_graph()
+    print("Remove more? y/n")
+    q = input()
+    if(q == "n"):
+        break;
