@@ -7,14 +7,14 @@ adj_list={
     "Sofia":[]
     
 }
-print(adj_list)
 color={}
 parent={}
 
 for u in adj_list.keys():
     color[u]='W'
     parent[u]=None
-    
+
+#perform dfs to determine whether graph is cyclic
 def dfs(u,color,parent):
     color [u]='G'
     for v in adj_list[u]:
@@ -27,6 +27,7 @@ def dfs(u,color,parent):
             return True
     color[u]='B'
     return False
+#call an function to add the edges if it is not cyclic
   
 is_cyclic = False
 for u in adj_list.keys():
