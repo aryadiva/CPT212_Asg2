@@ -1,5 +1,6 @@
-import init
 import func4
+import init
+from func1 import is_strongly_connected
 
 vertex = init.vertex;
 edges = init.edges;
@@ -31,6 +32,7 @@ def add(a, b):
             dist = dist_loop(a, b)
             edges.append((a,b,dist))
             break;
+
 
 # user inputting new edges -----------
 while True:
