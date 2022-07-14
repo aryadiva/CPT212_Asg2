@@ -12,7 +12,7 @@ def dist_loop(j, k):
             result = dist[x]
     return result
 
-# add function
+# Add edges function
 def add(a, b):
     for x in vertex:
         if(x == a):
@@ -21,34 +21,4 @@ def add(a, b):
             b = x;
             dist = dist_loop(a, b)
             edges.append((a,b,dist))
-            break
-
-def add_edge():
-    while True:
-        while True:
-            n = input("Please input the starting vertex: ")
-            i = 0
-            while i <= len(vertex):
-                temp = vertex[i]
-                if (temp == n):
-                    break
-                i += 1
-                if (i == 5 and temp != n):
-                    print("Unknown input, terminating...")
-                    quit()
-            break
-
-        while True:
-            m = input("Please input the destination vertex: ")
-            i = 0
-            while i <= len(vertex):
-                temp = vertex[i]
-                if (temp == m):
-                    break
-                i += 1
-                if (i == 5 and temp != m):
-                    print("Unknown input, terminating...")
-                    quit()
-            i = 0
-            break
-        add(n, m)
+            break;
