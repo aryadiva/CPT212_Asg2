@@ -46,10 +46,6 @@ weight_dicts = {
     'SOBA': 4495
 }
 
-
-dist = [["DU_VA", DU_VA], ["PO_SO", PO_SO], ["VA_BA", VA_BA], ["VA_PO", VA_PO], ["DU_PO", DU_PO],
-        ["BA_PO", BA_PO], ["VA_SO", VA_SO], ["BA_SO", BA_SO], ["DU_BA", DU_BA], ["DU_SO", DU_SO]]
-
 # Initialize vertex using adjacency list
 vertex = ['BA', 'VA', 'PO', 'SO', 'DU']
 # Initialize edges
