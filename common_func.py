@@ -22,6 +22,7 @@ def add(a, b):
             dist = dist_loop(a, b)
             edges.append((a,b,dist))
             break;
+    init.draw_graph()
 # add edge function
 def add_edge():
     while True:
@@ -55,7 +56,6 @@ def add_edge():
 # Remove edges function
 def remove_edges() :
     while True:
-        init.draw_graph()
         print("Please input the starting vertex: ")
         n = input()
         print("Please input the destination vertex: ")

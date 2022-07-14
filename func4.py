@@ -16,7 +16,6 @@ def mstt():
     ax.margins(0.005)
     plt.axis("off")
     plt.show();
-mstt()
 
 
 
