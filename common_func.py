@@ -61,11 +61,20 @@ def remove_edges() :
         print("Please input the destination vertex: ")
         m = input()
         if(init.graph.has_edge(n, m) == True) :
-            init.graph.remove_edge(init.graph ,n , m)
+            if(n=='BA' and m=='VA'):
+                init.graph.remove_edge('BA', 'VA')
+            elif(n == 'VA' and m == 'PO'):
+                init.graph.remove_edge('VA', 'PO')
+            elif(n == 'PO' and m == 'SO'):
+                init.graph.remove_edge('PO', 'SO')
+            elif(n == 'SO' and m == 'VA'):
+                init.graph.remove_edge('SO', 'VA')
+            elif(n == 'DU' and m == 'BA'):
+                init.graph.remove_edge('DU', 'BA')
             print('The edge has been removed')
         else :
             print('The edge to be removed does not exist')
-        init.draw_graph()
+        print(init.graph)
         print("Remove more? y/n")
         q = input()
         if(q == "n"):

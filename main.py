@@ -14,44 +14,45 @@ dist = init.weight_dicts
 
 ## This file is for the main menu or main UI
 def main_menu():
-    init.draw_graph()
     print('-----------------------------------\n'
         '|            Main Menu            |\n'
         '-----------------------------------\n'
-        '|  1. Add Edge                    |\n'
-        '|  2. Remove Edge                 |\n'
-        '|  3. Check Connectivity Graph    |\n'
-        '|  4. Check Cyclic Graph          |\n'
-        '|  5. Calculate Shortest Path     |\n'
-        '|  6. Show Minimum Spanning Tree  |\n'
-        '|  7. Reset                       |\n'
-        '|  8. Exit                        |\n'
+        '|  1. Show Graph                  |\n'
+        '|  2. Add Edge                    |\n'
+        '|  3. Remove Edge                 |\n'
+        '|  4. Check Connectivity Graph    |\n'
+        '|  5. Check Cyclic Graph          |\n'
+        '|  6. Calculate Shortest Path     |\n'
+        '|  7. Show Minimum Spanning Tree  |\n'
+        '|  8. Reset                       |\n'
+        '|  9. Exit                        |\n'
         '-----------------------------------\n')
 
 def options():
-    while True:
-        c = input("Choose: ")
-        if (c == '1'):
-            add_edge()
-        if (c == '2'):
-            remove_edges()
-        if (c == '3'):
-            print(func1.is_strongly_connected(graph))
-            print(func1.generate_strongly_connected_graph(graph))
-            # func1
-        if (c == '4'):
-            None
-            # func2
-        if (c == '5'):
-            None
-            # func3
-        if (c == '6'):
-            func4.mstt()
-        if (c == '7'):
-            None
-            # reset
-        if (c == '8'):
-            quit()
+    c = input("Choose: ")
+    if (c == '1'):
+        init.draw_graph()
+    if (c == '2'):
+        add_edge()
+    if (c == '3'):
+        remove_edges()
+    if (c == '4'):
+        print(func1.is_strongly_connected(graph))
+        print(func1.generate_strongly_connected_graph(graph))
+        # func1
+    if (c == '5'):
+        None
+        # func2
+    if (c == '6'):
+        start=input("What is the starting node:")
+        func3.dijkstra(graph,start)
+    if (c == '7'):
+        func4.mstt()
+    if (c == '8'):
+        None
+        # reset
+    if (c == '9'):
+        quit()
 
 # user inputting new edges -----------
 def min_ST():
