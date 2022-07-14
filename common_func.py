@@ -52,21 +52,21 @@ def add_edge():
         break
     add(n,m)
 
-# user removing edges
-while True:
-    init.draw_graph()
-    print("Please input the starting vertex: ")
-    n = input()
-    print("Please input the destination vertex: ")
-    m = input()
-
-    if (init.graph.has_edge(n, m) == True):
-        init.graph.remove_edge(n, m)
-        print('The edge has been removed')
-    else:
-        print('The edge to be removed does not exist')
-    init.draw_graph()
-    print("Remove more? y/n")
-    q = input()
-    if(q == "n"):
-        break;
+# Remove edges function
+def remove_edges(a, b) :
+    while True:
+        init.draw_graph()
+        print("Please input the starting vertex: ")
+        n = input()
+        print("Please input the destination vertex: ")
+        m = input()
+        if(init.graph.has_edge(n, m) == True) :
+            init.graph.remove_edge(n, m)
+            print('The edge has been removed')
+        else :
+            print('The edge to be removed does not exist')
+        init.draw_graph()
+        print("Remove more? y/n")
+        q = input()
+        if(q == "n"):
+            break;
