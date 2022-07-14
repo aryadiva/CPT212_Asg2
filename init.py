@@ -55,7 +55,6 @@ pos = {'BA': [1, 2], 'VA': [3, 2], 'PO': [3, 1], 'SO': [2, 1.25], 'DU': [1, 1]}
 
 graph = nx.DiGraph()
 
-
 def draw_graph():
     graph.add_nodes_from(vertex)
     graph.add_weighted_edges_from(edges)

@@ -59,18 +59,17 @@ def remove_edges(a, b) :
     print('The edge has been removed')
   else :
     print('The edge to be removed does not exist')
+    # user removing edges
+    while True:
+        init.draw_graph()
+        print("Please input the starting vertex: ")
+        n = input()
+        print("Please input the destination vertex: ")
+        m = input()
 
-# user removing edges
-while True:
-    init.draw_graph()
-    print("Please input the starting vertex: ")
-    n = input()
-    print("Please input the destination vertex: ")
-    m = input()
-
-    remove_edges(n, m);
-    init.draw_graph()
-    print("Remove more? y/n")
-    q = input()
-    if(q == "n"):
-        break;
+        remove_edges(n, m);
+        init.draw_graph()
+        print("Remove more? y/n")
+        q = input()
+        if(q == "n"):
+            break;

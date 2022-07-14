@@ -1,3 +1,5 @@
+import func1
+import func3
 import func4
 import init
 from common_func import add
@@ -5,6 +7,7 @@ from common_func import add_edge
 from common_func import remove_edges
 from func1 import is_strongly_connected
 
+graph = init.graph
 vertex = init.vertex
 edges = init.edges
 dist = init.weight_dicts
@@ -25,32 +28,31 @@ def main_menu():
         '|  9. Exit                        |\n'
         '-----------------------------------\n')
 
-def options(c):
-    while True:
-        if (c == 1):
-            init.draw_graph()
-        elif (c == 2):
-            add_edge()
-        elif (c == 3):
-            remove_edges('SO','VA')
-        elif (c == 4):
-            None
-            # func1
-        elif (c == 5):
-            None
-            # func2
-        elif (c == 6):
-            None
-            # func3
-        elif (c == 7):
-            None
-            # func4
-        elif (c == 8):
-            None
-            # reset
-        elif (c == 9):
-            # exit
-            break
+def options():
+    c = input("Choose: ")
+    if (c == '1'):
+        init.draw_graph()
+    if (c == '2'):
+        add_edge()
+    if (c == '3'):
+        None
+    if (c == '4'):
+        print(func1.is_strongly_connected(graph))
+        print(func1.generate_strongly_connected_graph(graph))
+        # func1
+    if (c == '5'):
+        None
+        # func2
+    if (c == '6'):
+        None
+        # func3
+    if (c == '7'):
+        func4.mstt()
+    if (c == '8'):
+        None
+        # reset
+    if (c == '9'):
+        quit()
 
 # user inputting new edges -----------
 def min_ST():
@@ -94,10 +96,8 @@ def min_ST():
         if (q != "n" and q != "y"):
             print("Not a valid response, exiting...")
             quit()
-            ...
 #---------------------------------------
-
 main_menu()
-#c = input()
+options()
 #options(c)
-#...
+
