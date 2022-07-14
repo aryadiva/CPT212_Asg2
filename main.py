@@ -1,6 +1,7 @@
 import func4
 import init
 from common_func import add
+from common_func import add_edge
 from func1 import is_strongly_connected
 
 vertex = init.vertex
@@ -26,9 +27,9 @@ def main_menu():
 def options(c):
     while True:
         if (c == 1):
-            # show graph
+            init.draw_graph()
         elif (c == 2):
-            # add edge
+            add_edge()
         elif (c == 3):
             # remove edge
         elif (c == 4):
@@ -90,5 +91,4 @@ def min_ST():
             print("Not a valid response, exiting...")
             quit()
             ...
-min_ST()
 #---------------------------------------
