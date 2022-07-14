@@ -12,8 +12,40 @@ DU <--> VA = 4805   PO <--> SO = 334    VA <--> BA = 4168   VA <--> PO = 929    
 BA <--> PO = 4226   VA <--> SO = 1192   BA <--> SO = 4495   DU <--> BA = 7991   DU <--> SO = 3817
 """
 # Initialize distance
-DU_VA = 4805;   PO_SO = 334;    VA_BA = 4168;   VA_PO = 929;    DU_PO = 4149;
-BA_PO = 4226;   VA_SO = 1192;   BA_SO = 4495;   DU_BA = 7991;   DU_SO = 3817;
+DU_VA = 4805;
+PO_SO = 334;
+VA_BA = 4168;
+VA_PO = 929;
+DU_PO = 4149;
+BA_PO = 4226;
+VA_SO = 1192;
+BA_SO = 4495;
+DU_BA = 7991;
+DU_SO = 3817;
+
+weight_dicts = {
+    'DUVA': 4805,
+    'DUBA': 7991,
+    'DUPO': 4149,
+    'DUSO': 3817,
+    'POSO': 334,
+    'PODU': 4149,
+    'POBA': 4226,
+    'POVA': 929,
+    'VADU': 4805,
+    'VABA': 4168,
+    'VAPO': 929,
+    'VASO': 1192,
+    'BADU': 7991,
+    'BAPO': 4226,
+    'BASO': 4495,
+    'BAVA': 4168,
+    'SODU': 3817,
+    'SOPO': 334,
+    'SOVA': 1192,
+    'SOBA': 4495
+}
+
 
 dist = [["DU_VA", DU_VA], ["PO_SO", PO_SO], ["VA_BA", VA_BA], ["VA_PO", VA_PO], ["DU_PO", DU_PO],
         ["BA_PO", BA_PO], ["VA_SO", VA_SO], ["BA_SO", BA_SO], ["DU_BA", DU_BA], ["DU_SO", DU_SO]]
@@ -21,11 +53,13 @@ dist = [["DU_VA", DU_VA], ["PO_SO", PO_SO], ["VA_BA", VA_BA], ["VA_PO", VA_PO], 
 # Initialize vertex using adjacency list
 vertex = ['BA', 'VA', 'PO', 'SO', 'DU']
 # Initialize edges
-edges = [('BA', 'VA', VA_BA), ('VA', 'PO', VA_PO), ('PO','SO', PO_SO), ('SO', 'VA', VA_SO), ('DU', 'BA', DU_BA)]
+edges = [('BA', 'VA', VA_BA), ('VA', 'PO', VA_PO), ('PO', 'SO', PO_SO), ('SO', 'VA', VA_SO), ('DU', 'BA', DU_BA)]
 # Initialize position
-pos = { 'BA': [1,2] , 'VA': [3,2] , 'PO': [3,1], 'SO': [2,1.25], 'DU': [1,1]}
+pos = {'BA': [1, 2], 'VA': [3, 2], 'PO': [3, 1], 'SO': [2, 1.25], 'DU': [1, 1]}
 
 graph = nx.DiGraph()
+
+
 def draw_graph():
     graph.add_nodes_from(vertex)
     graph.add_weighted_edges_from(edges)
@@ -38,3 +72,5 @@ def draw_graph():
     ax.margins(0.005)
     plt.axis("off")
     plt.show();
+
+
