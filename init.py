@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 """
 BA = Bamako, VA = Vaduz, PO = Podgorica, SO = Sofia , DU = Dushanbe
 
-BA --> VA --> PO --> SO --> DU --> BA
+DU --> BA --> VA --> PO --> SO --> VA
 
 # Distance list (Km)
 DU <--> VA = 4805   PO <--> SO = 334    VA <--> BA = 4168   VA <--> PO = 929    DU <--> PO = 4149
