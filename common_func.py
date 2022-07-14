@@ -53,7 +53,7 @@ def add_edge():
     add(n,m)
 
 # Remove edges function
-def remove_edges(a, b) :
+def remove_edges() :
     while True:
         init.draw_graph()
         print("Please input the starting vertex: ")
