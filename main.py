@@ -35,10 +35,28 @@ def add(a, b):
 # user inputting new edges -----------
 while True:
     init.draw_graph()
-    print("Please input the starting vertex: ")
-    n = input()
-    print("Please input the destination vertex: ")
-    m = input()
+    n = input("Please input the starting vertex: ")
+    i=0
+    while i <= len(vertex):
+        temp = vertex[i]
+        if(temp == n):
+            break
+        i+=1
+        if(i == 5 and temp != n):
+            print("Unknown input, terminating...")
+            quit()
+
+    m = input("Please input the destination vertex: ")
+    i = 0
+    while i <= len(vertex):
+        temp = vertex[i]
+        if (temp == m):
+            break
+        i += 1
+        if (i == 5 and temp != m):
+            print("Unknown input, terminating...")
+            quit()
+    i=0
 
     add(n, m);
     init.draw_graph()
@@ -46,5 +64,11 @@ while True:
     print("Add more? y/n")
     q = input()
     if(q == "n"):
-        break;
+        break
+    if(q == "y"):
+        continue
+    if(q != "n" and q != "y"):
+        print("Not a valid response, exiting...")
+        quit()
+        ...
 #---------------------------------------

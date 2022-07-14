@@ -1,6 +1,5 @@
 import networkx as nx
 from matplotlib import pyplot as plt
-
 import init
 
 graph = init.graph
@@ -17,4 +16,6 @@ def mstt():
     plt.axis("off")
     plt.show();
 mstt()
+
+
 
