@@ -61,7 +61,7 @@ def remove_edges() :
         print("Please input the destination vertex: ")
         m = input()
         if(init.graph.has_edge(n, m) == True) :
-            init.graph.remove_edge(n, m)
+            init.graph.remove_edge(init.graph ,n , m)
             print('The edge has been removed')
         else :
             print('The edge to be removed does not exist')
