@@ -8,7 +8,5 @@ vertex = init.vertex
 edges = init.edges
 dist = init.dist
 
-def mstt():
-
-    plt.show();
-mstt()
+def spa():
+    sp = nx.shortest_path()
