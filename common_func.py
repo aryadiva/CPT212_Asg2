@@ -19,7 +19,7 @@ def dist_loop(j, k):
 
 # Add function
 def add(a, b):
-    if ((graph.has_edge(a, b) == True) or (graph.has_edge(b, a))):
+    if ((graph.has_edge(a, b) == True)):
         print('The edge ( %s , %s ) already exists!' % (a, b))
     else:
         edge = [(a, b, dist[a + b])]
@@ -148,3 +148,4 @@ def reset():
     graph.add_weighted_edges_from(edges)
     weight = nx.get_edge_attributes(graph, 'weight')
     print('The graph has been reset')
+    init.draw_graph()

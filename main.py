@@ -46,7 +46,6 @@ def options():
                 print("The graph is not strongly connected")
                 func1.generate_strongly_connected_graph(graph)
                 reset()
-            # func1
         if (c == '4'):
             None
             # func2
@@ -55,60 +54,13 @@ def options():
             EndingPoint=common_func.FetchEnd()
             ShortestPath=func3.shortest_path(graph, init.vertex[StartingPoint], init.vertex[EndingPoint])
             print(ShortestPath)
-            # func3
         if (c == '6'):
-            func4.mst()
-            #func4.random_mst()
+            func4.random_mst()
         if (c == '7'):
-            common_func.reset()
-            # reset
+            reset()
         if (c == '8'):
             quit()
 
-# user inputting new edges -----------
-def min_ST():
-    while True:
-        while True:
-            n = input("Please input the starting vertex: ")
-            i = 0
-            while i <= len(vertex):
-                temp = vertex[i]
-                if (temp == n):
-                    break
-                i += 1
-                if (i == 5 and temp != n):
-                    print("Unknown input, terminating...")
-                    quit()
-            break
-
-        while True:
-            m = input("Please input the destination vertex: ")
-            i = 0
-            while i <= len(vertex):
-                temp = vertex[i]
-                if (temp == m):
-                    break
-                i += 1
-                if (i == 5 and temp != m):
-                    print("Unknown input, terminating...")
-                    quit()
-            i = 0
-            break
-
-        add(n, m);
-        init.draw_graph_init()
-        func4.mstt()
-        print("Add more? y/n")
-        q = input()
-        if (q == "n"):
-            quit()
-        if (q == "y"):
-            continue
-        if (q != "n" and q != "y"):
-            print("Not a valid response, exiting...")
-            quit()
-#---------------------------------------
 main_menu()
 options()
-#options(c)
 
