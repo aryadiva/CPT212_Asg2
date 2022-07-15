@@ -18,3 +18,26 @@ def shortest_path(graph, start, end):
         if a != b:
             graph.add_edge(a, b, weight=init.weight_dicts[a + b])
     return nx.shortest_path(graph, start, end)
+
+"""
+start = input("The Starting Point: ")
+StartingPoint = common_func.FetchVertex(start)
+end = input("The Ending Point: ")
+EndingPoint = common_func.FetchVertex(end)
+ShortestPath = func3.shortest_path(graph, init.vertex[StartingPoint], init.vertex[EndingPoint])
+print(ShortestPath)
+
+
+
+def FetchVertex(a):
+    if(a == 'BA'):
+        return 0
+    elif(a == 'VA'):
+        return 1
+    elif(a == 'PO'):
+        return 2
+    elif(a == 'SO'):
+        return 3
+    elif(a == 'DU'):
+        return 4
+"""
