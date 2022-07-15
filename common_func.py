@@ -62,7 +62,7 @@ def remove(a, b):
         print('The edge to be removed is non-existant')
     init.draw_graph()
 # Remove edges validation function
-def remove_edge() :
+def remove_edges() :
     while True:
         n = input("Please input the starting vertex: ")
         i = 0
@@ -90,15 +90,3 @@ def remove_edge() :
         i = 0
         break
     remove(n, m)
-
-def FetchVertex(a):
-    if(a == 'BA'):
-        return 0
-    elif(a == 'VA'):
-        return 1
-    elif(a == 'PO'):
-        return 2
-    elif(a == 'SO'):
-        return 3
-    elif(a == 'DU'):
-        return 4

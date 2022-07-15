@@ -1,11 +1,10 @@
-import common_func
 import func1
 import func3
 import func4
 import init
 from common_func import add
 from common_func import add_edge
-from common_func import remove_edge
+from common_func import remove_edges
 from func1 import is_strongly_connected
 from func1 import generate_strongly_connected_graph
 
@@ -37,7 +36,7 @@ def options():
         if (c == '1'):
             add_edge()
         if (c == '2'):
-            remove_edge()
+            remove_edges()
         if (c == '3'):
             if func1.is_strongly_connected(graph):
                 print("The graph is strongly connected")
@@ -49,12 +48,8 @@ def options():
             None
             # func2
         if (c == '5'):
-            start=input("The Starting Point: ")
-            StartingPoint=(common_func.FetchVertex(start))
-            end=input("The Ending Point: ")
-            EndingPoint = (common_func.FetchVertex(end))
-            ShortestPath=func3.shortest_path(graph, init.vertex[StartingPoint], init.vertex[EndingPoint])
-            print(ShortestPath)
+            None
+            # func3
         if (c == '6'):
             func4.mst()
             #func4.random_mst()
