@@ -19,9 +19,9 @@ dist = init.weight_dicts
 ## This file is for the main menu or main UI
 def main_menu():
     init.draw_graph_init()
-    print('-----------------------------------\n'
+    print('###################################\n'
         '|            Main Menu            |\n'
-        '-----------------------------------\n'
+        '###################################\n'
         '|  1. Add Edge                    |\n'
         '|  2. Remove Edge                 |\n'
         '|  3. Check Connectivity Graph    |\n'
@@ -30,7 +30,7 @@ def main_menu():
         '|  6. Show Minimum Spanning Tree  |\n'
         '|  7. Reset Graph                 |\n'
         '|  8. Exit                        |\n'
-        '-----------------------------------')
+        '####################################')
 
 def options():
     while True:
