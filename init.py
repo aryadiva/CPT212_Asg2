@@ -54,13 +54,15 @@ edges = [('BA', 'VA', VA_BA), ('VA', 'PO', VA_PO), ('PO', 'SO', PO_SO), ('SO', '
 pos = {'BA': [1, 2], 'VA': [3, 2], 'PO': [3, 1], 'SO': [2, 1.25], 'DU': [1, 1]}
 
 graph = nx.DiGraph()
-graph.add_nodes_from(vertex)
-graph.add_weighted_edges_from(edges)
-weight = nx.get_edge_attributes(graph, 'weight')
 
-nx.draw(graph, pos=pos, with_labels=True, node_size=1000, arrowsize=25)
-nx.draw_networkx_edge_labels(graph, pos, edge_labels=weight)
 def draw_graph_init():
+    graph.add_nodes_from(vertex)
+    graph.add_weighted_edges_from(edges)
+    weight = nx.get_edge_attributes(graph, 'weight')
+
+    nx.draw(graph, pos=pos, with_labels=True, node_size=1000, arrowsize=22)
+    nx.draw_networkx_edge_labels(graph, pos, edge_labels=weight)
+
     ax = plt.gca()
     ax.margins(0.005)
     plt.axis("off")
@@ -69,7 +71,7 @@ def draw_graph_init():
 def draw_graph():
     Weight = nx.get_edge_attributes(graph, 'weight')
     nx.draw_networkx(graph, with_labels=True, pos= pos, node_size =1000, arrowsize = 22)
-    nx.draw_networkx_edge_labels(graph, pos, edge_labels = Weight, font_size = 10)
+    nx.draw_networkx_edge_labels(graph, pos, edge_labels = Weight)
 
     ax = plt.gca()
     ax.margins(0.005)
