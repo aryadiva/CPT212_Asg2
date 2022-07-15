@@ -4,7 +4,7 @@ import func4
 import init
 from common_func import add
 from common_func import add_edge
-from common_func import remove_edges
+from common_func import remove_edge
 from func1 import is_strongly_connected
 
 graph = init.graph
@@ -34,7 +34,7 @@ def options():
         if (c == '1'):
             add_edge()
         if (c == '2'):
-            remove_edges()
+            remove_edge()
         if (c == '3'):
             print(func1.is_strongly_connected(graph))
             print(func1.generate_strongly_connected_graph(graph))
