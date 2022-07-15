@@ -1,17 +1,20 @@
 import networkx as nx
 import init
+import random
 
 graph = init.graph
 vertex = init.vertex
 edges = init.edges
 dist = init.weight_dicts
 
-def spa():
-    init.draw_graph_init()
-    print("Please input the starting vertex: ")
-    n = input()
-    print("Please input the destination vertex: ")
-    m = input()
-
-    K=nx.algorithms.shortest_paths(graph, n, m)
-    print(K);
+# shortest path between the vertices
+def shortest_path(graph, start, end):
+    # if there is no edge between two vertices, random generate until the path is found
+    while not nx.has_path(graph, start, end):
+        a = random.choice(init.vertex)
+        b = random.choice(init.vertex)
+        if graph.has_edge(a, b) and not graph.has_edge(b, a):
+            continue
+        if a != b:
+            graph.add_edge(a, b, weight=init.weight_dicts[a + b])
+    return nx.shortest_path(graph, start, end)
