@@ -1,5 +1,5 @@
 from matplotlib import pyplot as plt
-
+import networkx as nx
 import init
 
 graph = init.graph
@@ -7,23 +7,27 @@ vertex = init.vertex
 edges = init.edges
 dist = init.weight_dicts
 
+
 ## looping through a list of distance to find the correct distance
 def dist_loop(j, k):
-    temp1 = (j+k)
+    temp1 = (j + k)
     for x in dist:
-        if(temp1 == x):
+        if (temp1 == x):
             result = dist[x]
     return result
+
 
 # Add function
 def add(a, b):
     if ((graph.has_edge(a, b) == True) or (graph.has_edge(b, a))):
         print('The edge ( %s , %s ) already exists!' % (a, b))
     else:
-        edge = [(a, b, dist[a+b])]
+        edge = [(a, b, dist[a + b])]
         graph.add_weighted_edges_from(edge)
         print('The edge ( %s , %s ) is added!' % (a, b))
     init.draw_graph()
+
+
 # add edge validation function
 def add_edge():
     while True:
@@ -52,7 +56,8 @@ def add_edge():
                 quit()
         i = 0
         break
-    add(n,m)
+    add(n, m)
+
 
 def remove(a, b):
     if (graph.has_edge(a, b) == True):
@@ -61,8 +66,10 @@ def remove(a, b):
     else:
         print('The edge to be removed is non-existant')
     init.draw_graph()
+
+
 # Remove edges validation function
-def remove_edges() :
+def remove_edges():
     while True:
         n = input("Please input the starting vertex: ")
         i = 0
@@ -90,3 +97,12 @@ def remove_edges() :
         i = 0
         break
     remove(n, m)
+
+
+# reset the graph
+def reset():
+    graph.clear()
+    graph.add_nodes_from(vertex)
+    graph.add_weighted_edges_from(edges)
+    weight = nx.get_edge_attributes(graph, 'weight')
+    print('The graph has been reset')

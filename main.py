@@ -5,6 +5,7 @@ import init
 from common_func import add
 from common_func import add_edge
 from common_func import remove_edges
+from common_func import reset
 from func1 import is_strongly_connected
 from func1 import generate_strongly_connected_graph
 
@@ -43,6 +44,7 @@ def options():
             else:
                 print("The graph is not strongly connected")
                 func1.generate_strongly_connected_graph(graph)
+                reset()
             # func1
         if (c == '4'):
             None
