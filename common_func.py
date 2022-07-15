@@ -1,5 +1,8 @@
+from matplotlib import pyplot as plt
+
 import init
 
+graph = init.graph
 vertex = init.vertex
 edges = init.edges
 dist = init.weight_dicts
@@ -14,14 +17,12 @@ def dist_loop(j, k):
 
 # Add function
 def add(a, b):
-    for x in vertex:
-        if(x == a):
-            a = x;
-        if(x == b):
-            b = x;
-            dist = dist_loop(a, b)
-            edges.append((a,b,dist))
-            break;
+    if ((graph.has_edge(a, b) == True) or (graph.has_edge(b, a))):
+        print('The edge ( %s , %s ) already exists!' % (a, b))
+    else:
+        edge = [(a, b, dist[a+b])]
+        graph.add_weighted_edges_from(edge)
+        print('The edge ( %s , %s ) is added!' % (a, b))
     init.draw_graph()
 # add edge function
 def add_edge():
@@ -55,18 +56,7 @@ def add_edge():
 
 # Remove edges function
 def remove_edges() :
-    while True:
-        print("Please input the starting vertex: ")
-        n = input()
-        print("Please input the destination vertex: ")
-        m = input()
-        if(init.graph.has_edge(n, m) == True) :
-            init.graph.remove_edge(init.graph ,n , m)
-            print('The edge has been removed')
-        else :
-            print('The edge to be removed does not exist')
-        init.draw_graph()
-        print("Remove more? y/n")
-        q = input()
-        if(q == "n"):
-            break;
+    del edges[0]
+    print(edges)
+    graph.clear()
+    init.draw_graph()
