@@ -7,7 +7,7 @@ edges = init.edges
 dist = init.weight_dicts
 
 def spa():
-    init.draw_graph()
+    init.draw_graph_init()
     print("Please input the starting vertex: ")
     n = input()
     print("Please input the destination vertex: ")

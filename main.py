@@ -14,7 +14,7 @@ dist = init.weight_dicts
 
 ## This file is for the main menu or main UI
 def main_menu():
-    init.draw_graph()
+    init.draw_graph_init()
     print('-----------------------------------\n'
         '|            Main Menu            |\n'
         '-----------------------------------\n'
@@ -85,7 +85,7 @@ def min_ST():
             break
 
         add(n, m);
-        init.draw_graph()
+        init.draw_graph_init()
         func4.mstt()
         print("Add more? y/n")
         q = input()
