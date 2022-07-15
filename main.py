@@ -56,7 +56,7 @@ def options():
             func4.mst()
             #func4.random_mst()
         if (c == '7'):
-            None
+            reset()
             # reset
         if (c == '8'):
             quit()
