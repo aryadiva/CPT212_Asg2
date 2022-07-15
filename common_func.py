@@ -98,6 +98,18 @@ def remove_edges():
         break
     remove(n, m)
 
+def FetchVertex(a):
+    if(a == 'BA'):
+        return 0
+    elif(a == 'VA'):
+        return 1
+    elif(a == 'PO'):
+        return 2
+    elif(a == 'SO'):
+        return 3
+    elif(a == 'DU'):
+        return 4
+
 
 # reset the graph
 def reset():

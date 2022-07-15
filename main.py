@@ -1,3 +1,4 @@
+import common_func
 import func1
 import func3
 import func4
@@ -50,13 +51,18 @@ def options():
             None
             # func2
         if (c == '5'):
-            None
+            start=input("The Starting Point: ")
+            StartingPoint=common_func.FetchVertex(start)
+            end=input("The Ending Point: ")
+            EndingPoint=common_func.FetchVertex(end)
+            ShortestPath=func3.shortest_path(graph, init.vertex[StartingPoint], init.vertex[EndingPoint])
+            print(ShortestPath)
             # func3
         if (c == '6'):
             func4.mst()
             #func4.random_mst()
         if (c == '7'):
-            None
+            common_func.reset()
             # reset
         if (c == '8'):
             quit()
