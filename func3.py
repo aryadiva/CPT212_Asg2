@@ -21,7 +21,7 @@ def shortest_path(graph, start, end):
                 continue
             if a != b:
                 graph.add_edge(a, b, weight=init.weight_dicts[a + b])
+        init.draw_graph()
         return nx.shortest_path(graph, start, end)
     else:
         return nx.shortest_path(graph, start, end)
-    common_func.reset()

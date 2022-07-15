@@ -54,6 +54,7 @@ def options():
             EndingPoint=common_func.FetchEnd()
             ShortestPath=func3.shortest_path(graph, init.vertex[StartingPoint], init.vertex[EndingPoint])
             print(ShortestPath)
+            reset()
         if (c == '6'):
             func4.mst()
             a = input("Do you wish to generate randomized minimum spanning tree? y/n\n")
