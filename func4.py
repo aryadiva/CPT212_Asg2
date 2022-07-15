@@ -15,55 +15,12 @@ dist = init.weight_dicts
 def mst():
     T = nx.algorithms.minimum_spanning_tree(graph.to_undirected())
     print(T)
-    nx.draw_networkx(T, with_labels=True, node_size=1500, node_color='grey', edge_color='grey', arrowsize=22,
+    nx.draw_networkx(T, with_labels=True, node_size=1200, node_color='grey', edge_color='grey', arrowsize=22,
                      font_size=16)
     ax = plt.gca()
     ax.margins(0.005)
     plt.axis("off")
     plt.show();
-
-# function for validating user input to minimum spanning tree
-def min_ST():
-    while True:
-        while True:
-            n = input("Please input the starting vertex: ")
-            i = 0
-            while i <= len(vertex):
-                temp = vertex[i]
-                if (temp == n):
-                    break
-                i += 1
-                if (i == 5 and temp != n):
-                    print("Unknown input, terminating...")
-                    quit()
-            break
-
-        while True:
-            m = input("Please input the destination vertex: ")
-            i = 0
-            while i <= len(vertex):
-                temp = vertex[i]
-                if (temp == m):
-                    break
-                i += 1
-                if (i == 5 and temp != m):
-                    print("Unknown input, terminating...")
-                    quit()
-            i = 0
-            break
-
-        add(n, m);
-        init.draw_graph_init()
-        mst()
-        print("Add more? y/n")
-        q = input()
-        if (q == "n"):
-            quit()
-        if (q == "y"):
-            continue
-        if (q != "n" and q != "y"):
-            print("Not a valid response, exiting...")
-            quit()
 
 # function for randomizing algorithm
 def randomize(a, b):
@@ -89,6 +46,4 @@ def random_mst():
 
     while not is_strongly_connected(graph):
         randomize(edg1, edg2)
-
-
 

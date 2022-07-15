@@ -28,13 +28,13 @@ def main_menu():
         '|  4. Check Cyclic Graph          |\n'
         '|  5. Calculate Shortest Path     |\n'
         '|  6. Show Minimum Spanning Tree  |\n'
-        '|  7. Reset                       |\n'
+        '|  7. Reset Graph                 |\n'
         '|  8. Exit                        |\n'
-        '-----------------------------------\n')
+        '-----------------------------------')
 
 def options():
     while True:
-        c = input("Choose: ")
+        c = input("\nPick an option: \n")
         if (c == '1'):
             add_edge()
         if (c == '2'):
@@ -55,7 +55,13 @@ def options():
             ShortestPath=func3.shortest_path(graph, init.vertex[StartingPoint], init.vertex[EndingPoint])
             print(ShortestPath)
         if (c == '6'):
-            func4.random_mst()
+            func4.mst()
+            a = input("Do you wish to generate randomized minimum spanning tree? y/n\n")
+            if(a == 'y'):
+                func4.random_mst()
+                func4.mst()
+            else:
+                continue
         if (c == '7'):
             reset()
         if (c == '8'):
