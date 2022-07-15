@@ -148,4 +148,3 @@ def reset():
     graph.add_weighted_edges_from(edges)
     weight = nx.get_edge_attributes(graph, 'weight')
     print('The graph has been reset')
-    init.draw_graph()
