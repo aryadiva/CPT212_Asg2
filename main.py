@@ -51,10 +51,8 @@ def options():
             None
             # func2
         if (c == '5'):
-            start=input("The Starting Point: ")
-            StartingPoint=common_func.FetchVertex(start)
-            end=input("The Ending Point: ")
-            EndingPoint=common_func.FetchVertex(end)
+            StartingPoint=common_func.FetchStart()
+            EndingPoint=common_func.FetchEnd()
             ShortestPath=func3.shortest_path(graph, init.vertex[StartingPoint], init.vertex[EndingPoint])
             print(ShortestPath)
             # func3

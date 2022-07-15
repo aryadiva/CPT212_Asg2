@@ -98,7 +98,38 @@ def remove_edges():
         break
     remove(n, m)
 
-def FetchVertex(a):
+def FetchStart():
+    while True:
+        a = input("Please input the starting vertex: ")
+        i = 0
+        while i <= len(vertex):
+            temp = vertex[i]
+            if (temp == a):
+                break
+            i += 1
+            if (i == 5 and temp != a):
+                print("Unknown input, terminating...")
+                quit()
+        break
+    return fetch(a)
+
+def FetchEnd():
+    while True:
+        b = input("Please input the destination vertex: ")
+        i = 0
+        while i <= len(vertex):
+            temp = vertex[i]
+            if (temp == b):
+                break
+            i += 1
+            if (i == 5 and temp != b):
+                print("Unknown input, terminating...")
+                quit()
+        i = 0
+        break
+    return fetch(b)
+
+def fetch(a):
     if(a == 'BA'):
         return 0
     elif(a == 'VA'):
@@ -109,7 +140,6 @@ def FetchVertex(a):
         return 3
     elif(a == 'DU'):
         return 4
-
 
 # reset the graph
 def reset():
