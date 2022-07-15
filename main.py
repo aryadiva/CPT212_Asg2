@@ -7,6 +7,8 @@ from common_func import add
 from common_func import add_edge
 from common_func import remove_edge
 from func1 import is_strongly_connected
+from func1 import generate_strongly_connected_graph
+
 
 graph = init.graph
 vertex = init.vertex
@@ -37,8 +39,11 @@ def options():
         if (c == '2'):
             remove_edge()
         if (c == '3'):
-            print(func1.is_strongly_connected(graph))
-            print(func1.generate_strongly_connected_graph(graph))
+            if func1.is_strongly_connected(graph):
+                print("The graph is strongly connected")
+            else:
+                print("The graph is not strongly connected")
+                func1.generate_strongly_connected_graph(graph)
             # func1
         if (c == '4'):
             None

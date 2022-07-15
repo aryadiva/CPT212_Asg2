@@ -24,4 +24,5 @@ def generate_strongly_connected_graph(graph):
             continue
         if a != b:
             graph.add_edge(a, b, weight=init.weight_dicts[a + b])
+    init.draw_graph()
     return graph
